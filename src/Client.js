@@ -700,6 +700,18 @@ class Client extends EventEmitter {
                 await this.destroy();
             }
         });
+		
+		// Capture custom request events
+        const handleSyncEvent = request => {
+            const url = request.url();
+            if (url.includes('https://dit.whatsapp.net/deidentified_telemetry')) {
+                this.emit(Events.SYNCED);
+                page.removeListener('request', handleSyncEvent);
+            }
+        };
+		
+		// Attach the sync event listener to page
+        page.on('request', handleSyncEvent);
     }
 
     async initWebVersionCache() {

@@ -327,6 +327,9 @@ declare namespace WAWebJS {
 
         /** Emitted when the client has initialized and is ready to receive messages */
         on(event: 'ready', listener: () => void): this
+		
+		/** Emitted when the client has initialized and is ready to receive messages */
+        on(event: 'synced', listener: () => void): this
 
         /** Emitted when the RemoteAuth session is saved successfully on the external Database */
         on(event: 'remote_session_saved', listener: () => void): this
@@ -578,6 +581,7 @@ declare namespace WAWebJS {
         AUTHENTICATED = 'authenticated',
         AUTHENTICATION_FAILURE = 'auth_failure',
         READY = 'ready',
+		SYNCED = 'synced',
         MESSAGE_RECEIVED = 'message',
         MESSAGE_CREATE = 'message_create',
         MESSAGE_REVOKED_EVERYONE = 'message_revoke_everyone',

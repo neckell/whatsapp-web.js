@@ -41,6 +41,7 @@ exports.Events = {
     AUTHENTICATED: 'authenticated',
     AUTHENTICATION_FAILURE: 'auth_failure',
     READY: 'ready',
+    SYNCED: 'synced',
     CHAT_REMOVED: 'chat_removed',
     CHAT_ARCHIVED: 'chat_archived',
     MESSAGE_RECEIVED: 'message',
